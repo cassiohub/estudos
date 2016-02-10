@@ -67,6 +67,48 @@ for(i=0; i< array.length; i++){
 var arrayArrays = [[0,1,2,3], [4,5,6,7], [8,9,10,11]];
 console.log("Array of Arrays: " + arrayArrays);
 
+
+var pets = ["cat", "dog", "bird", "fly", "bug", "ox"];
+console.log(pets);
+
+console.log("\npop removes the last element of an array");
+pets.pop();
+console.log("\tafter pop:  " + pets);
+
+console.log("\npush add one or more elements to the end of an array");
+pets.push("bull", "lion");
+console.log("\tafter push: " + pets);
+
+console.log("\nshift removes the first element of an array");
+pets.shift();
+console.log("\tafter shift: "+ pets);
+
+console.log("\nunshift add one or more elements to the beginning of an array");
+pets.unshift("puppy", "bear");
+console.log("\tafter unshift: " + pets);
+
+console.log("\nsplice add one or more element anywhere in an array. removing is optional.\n splice([index where insert], [number of elements to be removed], [elements to insert])");
+console.log("\tpets.splice(2, 2, \"andorinha\", \"javali\")");
+pets.splice(2, 2, "andorinha", "javali");
+console.log("\t\tafter splice: " + pets);
+
+console.log("you can add without removing passing 0 as second parameter");
+console.log("\tpets.splice(4, 0, \"jumento\", \"baleia\")");
+pets.splice(4, 0, "jumento", "baleia");
+console.log("\t\tafter splice: " + pets);
+
+console.log("you can remove without adding passing 0 as first parameter");
+console.log("\tpets.splice(2, 2)");
+pets.splice(2,2);
+console.log("\t\tafter splice: " + pets);
+
+console.log("you can use slice to copy consecutives elements to a new array");
+console.log("\tvar flyPets = pets.splice(2, 2)");
+var flyPets = pets.splice(4,2);
+console.log("\t\tpets after splice: " + pets);
+console.log("\t\tflyPets after splice: " + flyPets);
+
+
 /* Objects */
 console.log("\n=== Objects ===");
 
@@ -117,6 +159,7 @@ var perimeter = rex.calcPerimeter();
 
 // Ternary Operator
 var grade = 51;
+console.log("\"You \"+ (grade>50 ? \'passed\' : \'failed\')");
 console.log("You "+ (grade>50 ? 'passed' : 'failed'));
 
 
