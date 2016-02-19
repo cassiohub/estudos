@@ -1,12 +1,23 @@
 /* Math */
 console.log("\n=== Math ===");
-console.log("Math.random() => " + Math.random()) // random number between 0 and 1
 
-console.log("Math.floor(1.4) => " + Math.floor(1.4)) // return the largest integer less than or equal to a number
+console.log("Math.round(1.4) => " + Math.round(1.4));  // round to greater number if >= .5, to smaller if < 0.5
+console.log("Math.round(1.6) => " + Math.round(1.6));
 
-console.log("Math.ceil(1.4) => " + Math.ceil(1.4)) // return the smaller integer greater than or equal to a number
+console.log("Math.floor(1.4) => " + Math.floor(1.4)) // force javascript to round number to previous smaller number
+
+console.log("Math.ceil(1.4) => " + Math.ceil(1.4)) // force javascript to round number to next greater number
 
 console.log("Math.pow(2, 4) => " + Math.pow(2, 4)) // return the power of a number
+
+console.log("Math.random() => " + Math.random()) // random number between 0 and 1
+
+console.log("(Math.random() * 6) + 1 => " + (Math.random() * 6) + 1) // random number between 1 and 6
+
+// Math.random() * (max - min + 1) + min;
+// random number between 3 and 6
+var randomNum = (Math.random() * (6 - 3 + 1)) + 3;
+console.log("(Math.random() * (6 - 3 + 1)) + 3 => " + randomNum);
 
 
 /* Numbers */
@@ -92,22 +103,42 @@ console.log("\tpets.splice(2, 2, \"andorinha\", \"javali\")");
 pets.splice(2, 2, "andorinha", "javali");
 console.log("\t\tafter splice: " + pets);
 
-console.log("you can add without removing passing 0 as second parameter");
+console.log("you can add without removing passing 0 as second parameter and new elements");
 console.log("\tpets.splice(4, 0, \"jumento\", \"baleia\")");
 pets.splice(4, 0, "jumento", "baleia");
 console.log("\t\tafter splice: " + pets);
 
-console.log("you can remove without adding passing 0 as first parameter");
+console.log("you can remove without adding");
 console.log("\tpets.splice(2, 2)");
 pets.splice(2,2);
 console.log("\t\tafter splice: " + pets);
 
-console.log("you can use slice to copy consecutives elements to a new array");
-console.log("\tvar flyPets = pets.splice(2, 2)");
-var flyPets = pets.splice(4,2);
-console.log("\t\tpets after splice: " + pets);
-console.log("\t\tflyPets after splice: " + flyPets);
+console.log("slice copies consecutives elements to a new array. slice([fistElement], [lastElement+1])");
+console.log("\tvar flyPets = pets.slice(2, 4)");
+var flyPets = pets.slice(2,4);
+console.log("\t\tpets after slice: " + pets + " (unchanged)");
+console.log("\t\tflyPets after slice: " + flyPets);
 
+/* Functions and Variables */
+//global variables
+mainScope = "global variabel";
+var otherVar = "also global scope";
+function local(argument){
+  var mainScope = "new local variabel"; // local variable who share the name with the global variable.
+  globalVariable = "it's inside the function, but it wasn't declared with var keyword, so it's global";
+}
+function local(argument){
+  var localVariabel = "local";
+  console.log(argument); // parameters are local variables inside the function scope;
+}
+
+function withReturn(argument){
+  return argument * 3; // will return the result of this multiplication
+}
+// you can assign the return value to another variable
+var retorno = withReturn(4);
+// or use the return as a variable
+console.log(withReturn(12));
 
 /* Objects */
 console.log("\n=== Objects ===");
@@ -131,7 +162,6 @@ var setAge = function(age){
 }
 
 //a function as a object property is called Method
-
 person2.setAge = setAge;
 person2.setAge(99);
 console.log(person2.age);
@@ -161,8 +191,6 @@ var perimeter = rex.calcPerimeter();
 var grade = 51;
 console.log("\"You \"+ (grade>50 ? \'passed\' : \'failed\')");
 console.log("You "+ (grade>50 ? 'passed' : 'failed'));
-
-
 
 
 
