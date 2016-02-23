@@ -10,6 +10,8 @@ console.log("Math.ceil(1.4) => " + Math.ceil(1.4)) // force javascript to round 
 
 console.log("Math.pow(2, 4) => " + Math.pow(2, 4)) // return the power of a number
 
+console.log("Math.abs(-5) ==> " + Math.abs(-5)) // return absolute value
+
 console.log("Math.random() => " + Math.random()) // random number between 0 and 1
 
 console.log("(Math.random() * 6) + 1 => " + (Math.random() * 6) + 1) // random number between 1 and 6
@@ -165,9 +167,6 @@ var setAge = function(age){
 person2.setAge = setAge;
 person2.setAge(99);
 console.log(person2.age);
-
-
-
 
 function Rectangle(height, width) {
   this.height = height || 8;

@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Basic</title>
-	<script src="app.js"></script>
+	<title>Basic Concepts</title>
 </head>
 <body>
-	
+	<h5>Open the console to see code return</h5><br>
+
+	<fieldset>
+		<h4>Mouse Events</h4>
+		<h5>onClick();</h5>
+		<a href="JavaScript:void(0);" onClick="alert('Called onClick');">Click to alert</a><br/>
+		<input type="button" value="Click to Alert" onClick="alert('Called onClick');">
+
+		<h5>onMouseOver \ onMouseout</h5>
+		<a href="JavaScript:void(0);" id="changeLink" onMouseover="changeColor();" onMouseout="changeFont();">Mouse over to change color</a>
+	</fieldset>
+	<br>
+
+	<fieldset>
+		<h4>Fields Events</h4>
+		<h5>Fields value</h5>
+		<input type="text" id="changeValue" onFocus="changeBackground(id);" onBlur="changeBackgroundBack(id);"> <!-- call function passing element id as argument -->
+		<input type="button" id="setInput" value="Click to set input value to 5" onClick="setInputValue();">
+		<p id="inputValue">O Valor do input é: </p>
+	</fieldset>
+	<br>
+
+	<fieldset id="f3">
+		<h4>Element ClassName</h4>
+		<p id="classElement" class="text-green font-big visible">This element have multiple classes</p>
+		<input type="button" value="Click to see it's classes" onClick="showClasses();">
+		<input type="button" value="Click to add 'font-small' class" onClick="addClass();">
+		<p id="allClasses"></p>
+	</fieldset>
+
+	<script src="app.js"></script>
+	<script src="events.js"></script>
+	<script src="dom.js"></script>
 </body>
 </html>
