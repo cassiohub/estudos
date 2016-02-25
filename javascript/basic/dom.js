@@ -45,3 +45,39 @@ console.log("img.getAttribute('class'): " + img.getAttribute('class'));
 console.log("img.setAttribute('class', 'image-other');");
 img.setAttribute('class', 'image-other');
 console.log("img.getAttribute('class'): " + img.getAttribute('class'));
+
+
+/* Creating Elements */
+var nodeToAdd = document.createElement("p");
+nodeToAdd.setAttribute("class", "normal");
+var nodeTxt = document.createTextNode("Hello, World!");
+nodeToAdd.appendChild(nodeTxt);
+
+var anotherNode = document.createElement("a");
+anotherNode.setAttribute("href", "#");
+var linkText = document.createTextNode("Link inserted");
+anotherNode.appendChild(linkText);
+
+// appendChild() will insert at the end of the tree;
+f4.appendChild(nodeToAdd);
+// insertBefore receive a second parameter
+f4.insertBefore(anotherNode, nodeToAdd);
+
+// removing a element
+//f4.removeChild(f4.childNodes[1]); OR
+var oldE = f4.childNodes[1];
+f4.removeChild(oldE);
+
+var middleE = document.createElement("p");
+var middleTxt = document.createTextNode("Inserted on the middle");
+middleE.insertBefore(middleTxt, middleE.lastChild);
+
+// insert before the next element (trick because there is no insertAfter() method)
+f4.insertBefore(middleE, anotherNode.nextSibling);
+
+
+
+
+
+
+
