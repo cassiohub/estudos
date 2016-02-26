@@ -70,11 +70,10 @@ f4.removeChild(oldE);
 
 var middleE = document.createElement("p");
 var middleTxt = document.createTextNode("Inserted on the middle");
-middleE.insertBefore(middleTxt, middleE.lastChild);
+middleE.insertBefore(middleTxt, middleE.childNodes[0]); //same as using middleE.appendChild(middleText)
 
 // insert before the next element (trick because there is no insertAfter() method)
 f4.insertBefore(middleE, anotherNode.nextSibling);
-
 
 
 

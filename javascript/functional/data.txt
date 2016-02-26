@@ -1,0 +1,6 @@
+Cassio Hubner	waffle	5	2
+Cassio Hubner	soda	2	10
+Cassio Hubner	knife	30	1
+Bill Gates	computer	100	3
+Bill Gates	mouse	20	10
+Bill Gates	iphone	99	2
