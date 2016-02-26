@@ -142,49 +142,6 @@ var retorno = withReturn(4);
 // or use the return as a variable
 console.log(withReturn(12));
 
-/* Objects */
-console.log("\n=== Objects ===");
-
-// literal notation
-var person1 = {
-	name: 'Cassio',
-	title: 'Student',
-	age: 22
-}
-
-console.log(person1)
-
-//construction notation
-var person2 = new Object();
-person2['name'] = 'Joao';
-person2.age = 25;
-
-var setAge = function(age){
-	this.age = age; // this this refer the object 
-}
-
-//a function as a object property is called Method
-person2.setAge = setAge;
-person2.setAge(99);
-console.log(person2.age);
-
-function Rectangle(height, width) {
-  this.height = height || 8;
-  this.width = width || 9;
-  this.calcArea = function() {
-      return this.height * this.width;
-  };
-  // put our perimeter function here!
-  this.calcPerimeter = function() {
-      return this.height * 2 + this.width * 2;
-  }
-}
-
-var rex = new Rectangle(7,3);
-var puppy = new Rectangle(7); //width = undefined 
-var area = rex.calcArea();
-var perimeter = rex.calcPerimeter();
-
 
 // Ternary Operator
 var grade = 51;
