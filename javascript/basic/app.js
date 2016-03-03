@@ -145,8 +145,8 @@ console.log(withReturn(12));
 
 // Ternary Operator
 var grade = 51;
-console.log("\"You \"+ (grade>50 ? \'passed\' : \'failed\')");
-console.log("You "+ (grade>50 ? 'passed' : 'failed'));
+console.log("\"You \"+ (grade>40 ? \'passed\' : \'failed\')");
+console.log("You "+ (grade>40 ? 'passed' : 'failed'));
 
 
 
