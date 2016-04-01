@@ -1,0 +1,22 @@
+extends layout
+
+block vars
+	- var title = "Register"
+
+block content
+	if error
+		p(style="color:red") #{error}
+
+	form(name="register-form" action="/register" method="POST")
+		input(type="hidden" name="csrf" value=csrfToken)
+		p Name 
+			input(type="text" name="name")
+		p Email 
+			input(type="text" name="email")
+		p Password 
+			input(type="password" name="password")
+
+		input(type="submit" value="Register")
+
+		p
+			a(href="/login") Click here to login

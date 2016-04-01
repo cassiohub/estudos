@@ -1,0 +1,9 @@
+extends layout
+
+block vars
+	- var title = "Dashboard"
+
+block content
+	p Hi, #{user.name}. Welcome Back.
+	p Click Here to 
+		a(href="/logout") logout
