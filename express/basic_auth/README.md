@@ -1,4 +1,4 @@
-Basic express app using basic auth.
-Password saved using bcrypt
-Session for the user login
-CSRF used on forms
+1. Basic express app using basic auth
+2. Password saved using bcrypt
+3. Session for the user login
+4. CSRF used on forms
