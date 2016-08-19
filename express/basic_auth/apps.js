@@ -40,7 +40,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 app.use(cookieParser());
-app.use(csrf());
+//app.use(csrf());
 
 app.use((req, res, next) => {
 	if(req.session && req.session.user) {
@@ -79,7 +79,7 @@ router.get("/login", (req, res, next) => {
 		res.redirect("/dashboard");
 	}
 	else {
-		res.render("login", {csrfToken: req.csrfToken()});
+		res.render("login"/*, {csrfToken: req.csrfToken()}*/);
 	}
 });
 
@@ -110,7 +110,7 @@ router.get("/logout", (req, res, next) => {
 });
 
 router.get("/register", (req, res, next) => {
-	res.render("register", {csrfToken: req.csrfToken()});
+	res.render("register"/*, {csrfToken: req.csrfToken()}*/);
 });
 
 router.post("/register", (req, res, next) => {
@@ -146,6 +146,7 @@ router.get("/dashboard", isLogged, (req, res, next) => {
 		- This become optional after adding the isLogger middleware - 
 	if(req.session && req.session.user) {
 	*/
+		console.log(req.session);
 		let query = { email: req.session.user };
 
 		User.findOne(query, (err, user) => {

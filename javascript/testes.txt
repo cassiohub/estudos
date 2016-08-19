@@ -1,0 +1,37 @@
+testes
+
+function dentro de function
+	funciona func2 se chamada dentro da func0
+	func2 nao funciona se é chamada fora de func0 
+
+testar o prototype
+	criar propriedades e metodos compartilhadas por todos os objetos de uma classe
+		antes de criar os objetos
+		depois de criar os objetos
+			ver se mudou em todos os objetos a propriedades
+		testar se te como deletar a propriedade ou metodo 
+			em todos os objetos
+			em um objeto específico
+
+"foreach" ==> for(var prop in objeto) ==> percorre as propriedades de um objeto
+	testar se funciona com os index de um objeto
+	testar se funciona pra percorrer os objetos dentro de um array de objetos
+
+
+fazer levantamento dos objetos no git
+
+se a propriedade/metodo foi criado no construtor ou no prototype
+	diferença entre o in (constructor) e o hasOwnProperty (prototype)
+
+
+segundo parâmetro do reduce (0 e {})
+
+diferenças entre o document e o window
+
+
+criar um objeto
+	encapsular propriedades (usar o this.prop e return {getProp()})
+	tentar acessar a prop direto pelo obj.prop
+	tentar acessar a prop pelo obj.getProp();
+	tentar injetar uma nova função no objeto de retorno
+	tentar injetar uma nova prop no objeto (this.novaProp)

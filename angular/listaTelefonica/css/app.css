@@ -1,0 +1,26 @@
+.jumbotron {
+	margin: 20px auto;
+	text-align: center;
+	width: 800px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.table {
+	margin-top: 40px;
+}
+.table th {
+	text-align: center;
+}
+.form-control {
+	margin-bottom: 5px;
+}
+.selecionado {
+	background-color: #D9EDF7 !important;
+}
+.negrito {
+	font-weight: bold;
+}
+th:hover{
+	color: blue;
+	cursor: pointer;
+}

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .jumbotron
+        h1 Welcome, #{user.name}
+        p.lead
+            | Your info
+        ul
+            li= user.username
+            li= user.email
+

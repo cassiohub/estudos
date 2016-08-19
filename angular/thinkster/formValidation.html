@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular JS</title>
+	<script src="lib/angular.min.js"></script>
+	<script src="formValidation.js"></script>
+
+	<style>
+	input.ng-valid.ng-touched {
+		border: 1px solid green;
+	}	
+	input.ng-invalid.ng-touched {
+		border: 1px solid red;
+	}
+	</style>
+</head>
+<body>
+	
+	<div ng-app="app">
+
+		<h1>Form Validation</h1>
+
+		<div ng-controller="FormCtrl">
+			<form novalidate name="form">
+				<p>
+					Name: 
+					<input type="text" ng-model="user.name" name="username" required>
+					<b>Untouched:</b> {{form.username.$untouched}} | 
+					<b>Touched:</b> {{form.username.$touched}} | 
+					<b>Pristine:</b> {{form.username.$pristine}} | 
+					<b>Dirty:</b> {{form.username.$dirty}}
+				</p>
+				<p>
+					Email:
+					<input type="email" ng-model="user.email" name="email" required><br>
+					<div ng-show="form.email.$submitted || form.email.$touched">
+						<span ng-show="form.email.$error.required" style="color:red;">Inform an e-mail</span>
+						<span ng-show="form.email.$error.email" style="color:red;">Invalid e-mail</span>
+					</div>
+				</p>
+				<p>
+					Gender:
+						<input type="radio" ng-model="user.gender" name="gender" value="male">Male
+						<input type="radio" ng-model="user.gender" name="gender" value="female">Female
+				</p>
+				<p>
+					<input type="button" ng-click="reset()" value="Reset">
+					<input type="submit" ng-click="save(user)" value="Save">
+					<input type="button" ng-click="formInfo = !formInfo" value="Form Info">
+				</p>
+				
+				<pre ng-show="formInfo">Form: {{form | json}}</pre>
+				<pre>User: {{user | json}}</pre>
+				<pre>Master: {{master | json}}</pre>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

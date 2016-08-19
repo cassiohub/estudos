@@ -8,7 +8,7 @@ block content
 		p(style="color:red") #{error}
 
 	form(name="register-form" action="/register" method="POST")
-		input(type="hidden" name="csrf" value=csrfToken)
+		//- input(type="hidden" name="csrf" value="#{csrfToken}")
 		p Name 
 			input(type="text" name="name")
 		p Email 

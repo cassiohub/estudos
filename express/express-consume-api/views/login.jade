@@ -1,0 +1,21 @@
+html
+    head
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+        link(rel='stylesheet', href='http://getbootstrap.com/examples/signin/signin.css')
+    body
+        .container
+            form.form-signin(action='login', method='POST', enctype='application/x-www-form-urlencoded')
+                h2.form-signin-heading Please sign in
+                label.sr-only(for='inputUsername') Email address
+                input#inputUsername.form-control(type='text', placeholder='Username', required='', name="username")
+                label.sr-only(for='inputPassword') Password
+                input#inputPassword.form-control(type='password', placeholder='Password', required='', name="password")
+                .checkbox
+                    label
+                        input(type='checkbox', value='remember-me')
+                        |  Remember me
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
+
+                p
+                    a(href='/register')
+                        | Create account

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>http GET</title>
+	<script src="lib/angular.min.js"></script>
+	<link rel="lib/bootstrap.min.js"/>
+	
+	<script>
+		var app = angular.module("githubCard", []);
+		app.controller("MainController", ['$scope', '$http', "GithubService", function($scope, $http, GithubService) {
+			var card = this;
+			GithubService.getUser().success(function(data) {
+				card.user = data;
+			});
+
+		}]);
+
+		app.factory("GithubService", function($http) {
+			return {
+				getUser: function() {
+					return $http.get("https://api.github.com/users/cassiohub");
+				}
+			}
+		});
+	</script>
+
+</head>
+<body ng-app="githubCard">
+	<h1>Github Card</h1>
+
+	<div ng-controller="MainController as card">
+		{{card.user}}
+	</div>
+</body>
+</html>

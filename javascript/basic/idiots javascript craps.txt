@@ -1,0 +1,14 @@
+idiots javascript craps
+
+nodeTypes use numbers 1 = element 3 = textNode
+	it could return a string;
+	it could return 0 or 1 (more meaningful numbers);
+
+nodeValue returns null for elements
+
+nodeName return not consistent: sometimes lowercase, sometimes uppercase
+
+there is a insertBefore, but there isn't a insertAfter;
+
+var monkeyWindow = window.open("monk.html", "win1", "width=420,height=380");
+	no spaces on window name (second parameter) and on size definition
